@@ -1,0 +1,22 @@
+{
+    "name": "test",
+    "pixelsPerCm": 14,
+    "map": 
+    {    
+        "sizeX": 50,
+        "sizeY": 50,
+        "tileSizeX": 1, 
+        "tileSizeY": 1,
+        "txtFile": "maps/data/map01.map",
+        "startPosX": 3,
+        "startPosY": 4,
+        "endPosX": 6,
+        "endPosY": 6
+    }, 
+    "robot": 
+    {
+        "radius":10,
+        "maxSpeedX": 2,
+        "maxSpeedY": 2
+    }
+}

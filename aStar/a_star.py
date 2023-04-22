@@ -30,7 +30,7 @@ class AStar:
     def heurestic(self, cCord, endCord):
         d =  (abs(cCord[0] - endCord[0]), abs(cCord[1] - endCord[1]))
         # return d[0] + d[1]
-        # return 10 * math.sqrt(d[0]**2 + d[1]**2 )
+        return 2 * math.sqrt(d[0]**2 + d[1]**2 )
         return 2 * (d[0] + d[1]) + (1.41 - 2) * min(d[0], d[1])
     def _buildNodesMap(self):
         m = [[None for i in range(0, self.maxSize[1])] for i2 in range(0, self.maxSize[0])]

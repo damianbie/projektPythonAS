@@ -1,6 +1,7 @@
 {
     "name": "test",
     "pixelsPerCm": 5,
+    "tileFontSize": 48,
     "map": 
     {    
         "sizeX": 20,
@@ -16,7 +17,7 @@
     "robot": 
     {
         "radius":10,
-        "maxSpeedX": 2,
-        "maxSpeedY": 2
+        "maxSpeedX": 0.4,
+        "maxSpeedY": 0.4
     }
 }

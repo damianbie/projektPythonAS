@@ -7,6 +7,7 @@ class Map:
         self.map = []
         self.size = (0, 0)
         self.tileSize = (15, 15)
+        self.fontSize = 24
 
     def getMap(self): return self.map
     def getTileSize(self): return self.tileSize

@@ -1,6 +1,7 @@
 {
     "name": "test",
     "pixelsPerCm": 6,
+    "tileFontSize": 84,
     "map": 
     {    
         "sizeX": 10,

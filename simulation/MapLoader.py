@@ -4,7 +4,7 @@ from simulation.Tile import Tile
 from simulation.robot import Robot
 
 class MapLoader:
-    def _loadFromTxt(fileName, size):
+    def _loadFromTxt(fileName, size, tileFontSize):
         map = []
         with open(fileName, "r") as f:
             indy = 0
@@ -16,7 +16,7 @@ class MapLoader:
           
                     elif int(ch) != Tile.AIR:
                         if indx <= size[0] and indy <= size[1]:
-                            t = Tile(int(ch), (indx, indy))
+                            t = Tile(int(ch), (indx, indy), tileFontSize)
                             map.append(t)
                             
                     indx = indx + 1
@@ -36,6 +36,8 @@ class MapLoader:
         tileSize =  (pixelsPerCm*m["tileSizeX"], pixelsPerCm*m["tileSizeY"])
         mapType = 0
         mapFileName = ""
+        tileFontSize = mi["tileFontSize"]
+        
         try:
             mapFileName = m["txtFile"]
             mapType = 1
@@ -50,7 +52,7 @@ class MapLoader:
             print("Error while parsing map file")
             raise RuntimeError()
         elif mapType == 1:
-            loadedMap = MapLoader._loadFromTxt(mapFileName, mapSize)
+            loadedMap = MapLoader._loadFromTxt(mapFileName, mapSize, tileFontSize)
         elif mapType == 2:
             loadedMap = MapLoader._loadDromBitmap(mapFileName, mapSize)
 
@@ -59,6 +61,7 @@ class MapLoader:
         finalMap.setTileSize(tileSize)
         finalMap.setMap(loadedMap, mapSize)
         finalMap._findSpecialTiles()
+        finalMap.fontSize = tileFontSize
 
         _r = mi["robot"]
         _rVel = (_r["maxSpeedX"], _r["maxSpeedY"])

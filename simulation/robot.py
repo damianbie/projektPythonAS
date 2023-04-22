@@ -77,11 +77,8 @@ class Robot:
         else:
             tempPos[1] = tempPos[1] - (-currentTargetPointInPixels[1] + self._pos[1]) * self._speed[1]
         
-        if abs(deltaPos0) < 0.2 and abs(deltaPos1) < 0.2:
+        if abs(deltaPos0) < 0.02 and abs(deltaPos1) < 0.02:
             self._currentTarget -= 1
         
         
         self._pos = tempPos
-        
-        
-        

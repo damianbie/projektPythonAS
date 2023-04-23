@@ -12,10 +12,13 @@ class Node:
             return True
         else:
             return False
+        
     def setParent(self, par):
         self.parent = par
+        
     def getCords(self):
         return self.pos
+    
     def getParent(self):
         return self.parent
     
@@ -27,5 +30,6 @@ class Node:
     
     def __ge__(self, other):
         return (self.g + self.h) > (other.g + other.h)
+    
     def __lt__(self, other):
         return self.g + self.h < other.g + other.h
